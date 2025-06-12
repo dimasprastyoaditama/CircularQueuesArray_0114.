@@ -56,5 +56,35 @@ public:
         }
         cout << "\nThe element deleted from the queue is: " << queue_array[FRONT] << "\n";
 
-        
+        //cek jika antrian hanya memiliki satu element
+        if (FRONT == REAR)
+        {
+            FRONT = -1;
+            REAR = -1;
+        }
+        else
+        {
+            //Jika element yang dihapus berada di posisi terakhir array, kembali ke awal array
+            if (FRONT == max - 1)
+                FRONT = 0;
+            else
+                FRONT = FRONT + 1;
+        }
+    }
+
+    void display()
+    {
+        int FRONT_position = FRONT;
+        int REAR_position = REAR;
+
+        // cek apakah antrian kosong
+        if (FRONT == -1)
+        {
+            cout << "Queue is empty\n";
+            return;
+        }
+
+        cout << "\nElements in the queue are...\n";
+
+
 }
